@@ -4,13 +4,17 @@ feature 'You can view bookmarks' do
     expect(page).to have_content 'Bookmarks'
   end
 
-  scenario 'the page shows the first bookmark url' do
-    visit '/bookmarks'
-    expect(page).to have_content 'http://www.makersacademy.com'
-  end
+  scenario 'returns a list of bookmarks' do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
 
-  scenario 'the page shows the second bookmark url' do
-    visit '/bookmarks'
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.google.com');")
+
+    visit('./bookmarks')
+
+    expect(page).to have_content 'http://www.makersacademy.com'
     expect(page).to have_content 'http://www.google.com'
   end
+
+  
 end

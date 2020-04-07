@@ -48,7 +48,7 @@ Create a new table
 ```
 bookmark_manager=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
 ```
-To view all existing data in the table run:
+To ```SELECT```(view) all existing data in the table run:
 ```
 bookmark_manager=# SELECT * FROM bookmarks;
 ```
@@ -58,11 +58,30 @@ id | url
 ---+------
 (0 rows)
 ```
-Enter bookmark data
+```INSERT``` bookmark data
 ```
 bookmark_manager=# INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');
 ```
+This can be used to ```DELETE``` items from the database:
+```
+bookmark_manager=# DELETE FROM bookmarks WHERE url = 'http://www.twitter.com';
+```
+And to ```UPDATE```:
+```
+bookmark_manager=# UPDATE bookmarks SET url = 'http://www.destroyallsoftware.com' WHERE url = 'http://www.askjeeves.com';
+```
+Download and install TablePlus.
+It will need to know some things about your Postgres server:
+- Where it is - ```localhost```, on ```Port 5432```.
+- Login details - computers name as a ```username``` and no password
+- Database to start with - ```bookmark_manager``` database.
 
+Now create a new test database following the same process above, with the name 'bookmark_manager_test'.
+```
+user=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+user=# \c bookmark_manager_test;
+bookmark_manager_test=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+```
 
 # How to start building this application from scratch
 First I created a new repository on GitHub.
@@ -146,6 +165,7 @@ require 'simplecov'
 require 'simplecov-console'
 require File.join(File.dirname(__FILE__), '../app', 'bookmark_manager.rb')
 
+ENV['ENVIRONMENT'] = 'test' = 'test' # This line allows rspec to test only our test database
 Capybara.app = BookmarkManager
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
