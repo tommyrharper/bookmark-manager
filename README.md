@@ -22,20 +22,20 @@ rspec --init
 ```
 I added the following dependencies to the Gemfile:
 ```
-gem 'rspec'
-gem 'sinatra'
 gem 'capybara'
+gem 'rspec'
 gem 'rubocop'
 gem 'simplecov'
 gem 'simplecov-console'
+gem 'sinatra'
 ```
 Run bundle to install dependencies, and set up file system.
 ```
 bundle
-mkdir bookmark_manager
-touch bookmark_manager/bookmark_manager.rb
-mkdir bookmark_manager/views
-touch bookmark_manager/views/index.erb
+mkdir app
+touch app/bookmark_manager.rb
+mkdir app/views
+touch app/views/index.erb
 touch config.ru
 mkdir lib
 ```
@@ -70,3 +70,47 @@ Visit in browser:
 localhost:9292
 ````
 Hello World should now be working.
+
+But we are not finished yet.
+
+Now we need to update spec/spec_helper.rb by adding the following code at the top of the file:
+```ruby
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require 'simplecov'
+require 'simplecov-console'
+require File.join(File.dirname(__FILE__), '../app', 'bookmark_manager.rb')
+
+Capybara.app = BookmarkManager
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start
+```
+run rspec to ensure it works
+```
+rspec
+```
+Hopefully you will get this response:
+```ruby
+Finished in 0.00062 seconds (files took 0.782 seconds to load)
+0 examples, 0 failures
+
+
+COVERAGE: 100.00% -- 0/0 lines in 0 files
+```
+Lets also change rubocop's settings:
+```
+touch .rubocop.yml
+```
+Then add to .rubocop.yml
+```ruby
+inherit_from:
+  - https://raw.githubusercontent.com/makersacademy/scaffolint/v1.1.0/.rubocop.yml
+```
+Okay you are now ready to go!
+
