@@ -4,16 +4,6 @@ feature 'You can view bookmarks' do
     expect(page).to have_content 'Bookmarks'
   end
 
-  scenario 'the page shows the first bookmark name' do
-    visit '/bookmarks'
-    expect(page).to have_content 'Google'
-  end
-
-  scenario 'the page shows the second bookmark name' do
-    visit '/bookmarks'
-    expect(page).to have_content 'BBC'
-  end
-
   scenario 'the page shows the first bookmark url' do
     visit '/bookmarks'
     expect(page).to have_content 'www.google.com'

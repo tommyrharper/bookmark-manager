@@ -1,12 +1,32 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/student/Projects/pairchallengs/bookmark-manager-all/bookmark-manager/spec/bookmark_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/pairchallengs/bookmark-manager-all/bookmark-manager/lib/bookmark.rb": {
+        "lines": [
+
+        ]
+      },
       "/Users/student/Projects/pairchallengs/bookmark-manager-all/bookmark-manager/spec/features/has_index_page_spec.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
+          0,
+          0,
           null,
           null
         ]
@@ -15,33 +35,23 @@
         "lines": [
           1,
           1,
-          1,
-          1,
+          0,
+          0,
           null,
           null,
           1,
-          1,
-          1,
+          0,
+          0,
           null,
           null,
           1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
+          0,
+          0,
           null,
           null
         ]
       }
     },
-    "timestamp": 1586259318
+    "timestamp": 1586259567
   }
 }
