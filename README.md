@@ -1,6 +1,6 @@
 # Bookmark Manager
 
-## My approach
+## How to start building this from scratch
 First I created a new repository on GitHub.
 
 Then on my mac in my command line I did the following:
@@ -29,7 +29,44 @@ gem 'rubocop'
 gem 'simplecov'
 gem 'simplecov-console'
 ```
-Run bundle to install dependencies
+Run bundle to install dependencies, and set up file system.
 ```
 bundle
+mkdir bookmark_manager
+touch bookmark_manager/bookmark_manager.rb
+mkdir bookmark_manager/views
+touch bookmark_manager/views/index.erb
+touch config.ru
+mkdir lib
 ```
+Add to bookmark_manager.rb
+```ruby
+require 'sinatra/base'
+
+class BookmarkManager < Sinatra::Base
+
+  get '/' do
+    erb :index
+  end
+
+  run! if app_file == $0
+end
+```
+Add to config.ru
+```ruby
+require_relative './bookmark_manager/bookmark_manager.rb'
+run BookmarkManager
+```
+Add to index.erb
+```
+Hello World
+```
+Run:
+```
+rackup
+```
+Visit in browser:
+```
+localhost:9292
+````
+Hello World should now be working.
