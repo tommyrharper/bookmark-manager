@@ -23,6 +23,19 @@
           null
         ]
       },
+      "/Users/student/Projects/pairchallengs/bookmark-manager-all/bookmark-manager/spec/features/add_bookmark_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/student/Projects/pairchallengs/bookmark-manager-all/bookmark-manager/spec/features/has_index_page_spec.rb": {
         "lines": [
           1,
@@ -58,6 +71,6 @@
         ]
       }
     },
-    "timestamp": 1586277966
+    "timestamp": 1586281846
   }
 }

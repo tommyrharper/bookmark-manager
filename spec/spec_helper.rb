@@ -28,9 +28,6 @@ RSpec.configure do |config|
   end
 end
 
-
-
-
 Capybara.app = BookmarkManager
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

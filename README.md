@@ -165,7 +165,6 @@ require 'simplecov'
 require 'simplecov-console'
 require File.join(File.dirname(__FILE__), '../app', 'bookmark_manager.rb')
 
-ENV['ENVIRONMENT'] = 'test' = 'test' # This line allows rspec to test only our test database
 Capybara.app = BookmarkManager
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -174,6 +173,19 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+```
+Later BUT NOT  YET we will need to add the following to ensure functionality on the test database:
+```ruby
+require_relative './setup_test_database'
+
+ENV['ENVIRONMENT'] = 'test' = 'test' # This line allows rspec to test only our test database
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
+
 ```
 run rspec to ensure it works
 ```
