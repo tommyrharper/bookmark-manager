@@ -210,7 +210,7 @@ inherit_from:
 ```
 Okay you are now ready to go!
 
-# User Story
+# User Story 1
 
 ```
 As a user,
@@ -226,3 +226,10 @@ bookmark| @name <br/> @url
 bookmars| @bookmarks
 
 ![User story 1](./svg_files/user-story-1.svg)
+
+# User Story 2
+```
+As a user,
+So I can save new sites,
+I would like to have the option to add new bookmarks
+```
