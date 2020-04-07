@@ -11,7 +11,47 @@ The website will have the following specification:
 * Filter bookmarks by tag
 * Users are restricted to manage only their own bookmarks
 
-## How to start building this from scratch
+# How to setup the databse
+
+Install PostgreSQL via Homebrew:
+```
+brew install postgresql
+```
+Allow Homebrew to run Postgres in the background
+```
+brew services start postgresql
+```
+Enter psql:
+```
+    > psql
+user=# 
+```
+Create a new database
+```
+user=# CREATE DATABASE bookmark_manager
+```
+Check it was created
+```
+user=# \l
+```
+Connect to the database
+```
+user=# \c bookmark_manager;
+```
+Inspect list of tables
+```
+user=# \dt
+```
+Should return 'No relations found.'
+
+Create a new table
+```
+bookmark_manager=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+```
+
+
+
+# How to start building this application from scratch
 First I created a new repository on GitHub.
 
 Then on my mac in my command line I did the following:
@@ -125,7 +165,7 @@ inherit_from:
 ```
 Okay you are now ready to go!
 
-## User Story
+# User Story
 
 ```
 As a user,
@@ -133,7 +173,7 @@ So that I know what bookmarks I have
 I would like to see a list of bookmarks
 ```
 
-## Domain model
+# Domain model
 
 Objects | Messages
 --------|------
