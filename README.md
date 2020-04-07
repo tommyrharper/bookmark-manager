@@ -1,5 +1,16 @@
 # Bookmark Manager
 
+The website will have the following specification:
+
+* Show a list of bookmarks
+* Add new bookmarks
+* Delete bookmarks
+* Update bookmarks
+* Comment on bookmarks
+* Tag bookmarks into categories
+* Filter bookmarks by tag
+* Users are restricted to manage only their own bookmarks
+
 ## How to start building this from scratch
 First I created a new repository on GitHub.
 
@@ -114,3 +125,19 @@ inherit_from:
 ```
 Okay you are now ready to go!
 
+## User Story
+
+```
+As a user,
+So that I know what bookmarks I have
+I would like to see a list of bookmarks
+```
+
+## Domain model
+
+Objects | Messages
+--------|------
+bookmark| @name <br/> @url
+bookmars| @bookmarks
+
+![User story 1](./svg_files/user-story-1.svg)
