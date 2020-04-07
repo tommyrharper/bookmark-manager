@@ -6,11 +6,11 @@
           1,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -18,15 +18,22 @@
       },
       "/Users/student/Projects/pairchallengs/bookmark-manager-all/bookmark-manager/lib/bookmark.rb": {
         "lines": [
-
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
         ]
       },
       "/Users/student/Projects/pairchallengs/bookmark-manager-all/bookmark-manager/spec/features/has_index_page_spec.rb": {
         "lines": [
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
@@ -35,23 +42,23 @@
         "lines": [
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1586259567
+    "timestamp": 1586259664
   }
 }
