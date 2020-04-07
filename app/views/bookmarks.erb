@@ -1,3 +1,6 @@
 <h1>Bookmarks</h1>
-www.google.com
-www.bbc.co.uk
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark %></li>
+    <% end %>
+</ul>
