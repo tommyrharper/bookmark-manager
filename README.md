@@ -48,7 +48,20 @@ Create a new table
 ```
 bookmark_manager=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
 ```
-
+To view all existing data in the table run:
+```
+bookmark_manager=# SELECT * FROM bookmarks;
+```
+This should return
+```
+id | url
+---+------
+(0 rows)
+```
+Enter bookmark data
+```
+bookmark_manager=# INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');
+```
 
 
 # How to start building this application from scratch

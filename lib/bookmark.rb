@@ -1,8 +1,8 @@
 class Bookmark
   def self.all
     [
-      "www.google.com",
-      "www.bbc.co.uk"
+      "http://www.makersacademy.com",
+      "http://www.google.com"
     ]
   end
 end
