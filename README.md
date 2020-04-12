@@ -28,7 +28,7 @@ user=#
 ```
 Create a new database
 ```
-user=# CREATE DATABASE bookmark_manager
+user=# CREATE DATABASE "bookmark_manager";
 ```
 Check it was created
 ```
